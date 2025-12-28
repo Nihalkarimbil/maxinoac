@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A66C2;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FFFFFF;
+  --color-accent: #E6F0FA;
+  --color-accent-foreground: #0A66C2;
+
+  --font-sans: var(--font-outfit), "Instrument Sans", sans-serif;
+}
+
+/* Minimal base tweaks */
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+::selection {
+  background: #c7d2fe;
+  /* indigo-200 */
+}
