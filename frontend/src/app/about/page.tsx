@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { CheckCircle, Users, Award, MapPin } from 'lucide-react';
+import {  Users, Award, MapPin } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -40,7 +40,13 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] bg-slate-200 rounded-2xl overflow-hidden shadow-lg">
                <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
-                   <span className="text-lg">Team Image Mockup</span>
+                   <Image
+                    src="/logo.png" 
+                    alt="About Maxino"
+                    width={300}
+                    height={300}
+                    
+                   />
                 </div>
             </div>
           </div>

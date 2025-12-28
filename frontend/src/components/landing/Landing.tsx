@@ -115,6 +115,8 @@ import {
   ShieldCheck,
   Clock,
 } from "lucide-react";
+import Link from "next/link";
+
 
 const Landing = () => {
   return (
@@ -164,9 +166,9 @@ const Landing = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-              <button className="w-full sm:w-auto bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-slate-200 hover:bg-blue-600 hover:shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1">
+              <Link href={"/booking"} className="w-full sm:w-auto bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-slate-200 hover:bg-blue-600 hover:shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1" >
                 Book a Service
-              </button>
+              </Link>
               <button className="group flex items-center gap-2 font-bold text-slate-700 hover:text-blue-600 transition-colors">
                 View Pricing
                 <span className="group-hover:translate-x-1 transition-transform">
@@ -188,7 +190,7 @@ const Landing = () => {
             <div className="relative z-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)] animate-bounce-slow">
               <div className="relative overflow-hidden rounded-3xl p-4">
                 <Image
-                  src="/ac-hero.png"
+                  src="/banner.png"
                   alt="Modern AC Unit"
                   width={700}
                   height={500}
