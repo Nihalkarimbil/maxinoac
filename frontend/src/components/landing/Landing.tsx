@@ -111,10 +111,7 @@
 import React from "react";
 import Image from "next/image";
 import {
-  Twitter,
-  Facebook,
-  Instagram,
-  Wind,
+ 
   ShieldCheck,
   Clock,
 } from "lucide-react";

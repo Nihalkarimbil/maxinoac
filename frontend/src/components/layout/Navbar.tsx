@@ -21,7 +21,6 @@ export default function Navbar() {
             <span className="text-2xl font-bold text-primary tracking-tight">Maxino</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
