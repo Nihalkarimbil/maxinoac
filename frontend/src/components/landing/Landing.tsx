@@ -120,8 +120,8 @@ import Link from "next/link";
 
 const Landing = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#f8fafc] overflow-hidden  flex items-center selection:bg-blue-100">
-      {/* --- PROFESSIONAL BACKGROUND ELEMENTS --- */}
+    <div className="relative w-full min-h-screen bg-[#f8fafc] px-4 lg:px-20 overflow-hidden  flex items-center selection:bg-blue-100">
+     
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-gradient-to-br from-blue-100/40 to-cyan-100/30 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-5%] left-[-5%] w-[600px] h-[600px] bg-gradient-to-tr from-slate-200/50 to-blue-50/50 rounded-full blur-[100px]" />
@@ -166,15 +166,15 @@ const Landing = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-              <Link href={"/booking"} className="w-full sm:w-auto bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-slate-200 hover:bg-blue-600 hover:shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1" >
+              <Link href={"/booking"} className="w-full sm:w-auto bg-slate-900 text-white px-10 py-3 rounded-2xl font-bold shadow-xl shadow-slate-200 hover:bg-blue-600 hover:shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1" >
                 Book a Service
               </Link>
-              <button className="group flex items-center gap-2 font-bold text-slate-700 hover:text-blue-600 transition-colors">
-                View Pricing
+              <Link href={"/about"} className="group flex items-center gap-2 font-bold text-slate-700 hover:text-blue-600 transition-colors">
+                View More 
                 <span className="group-hover:translate-x-1 transition-transform">
                   →
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
 

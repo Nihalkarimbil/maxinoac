@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${outfit.variable} antialiased bg-zinc-50 text-zinc-900 `}
       >
        <Navbar/>
-        <main className="pt-16 min-h-screen">{children}</main>
+        <main className="pt-16 min-h-screen ">{children}</main>
        <Footer/>
        <Toaster position="bottom-right" />
       </body>

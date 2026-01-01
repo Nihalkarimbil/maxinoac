@@ -8,6 +8,7 @@ import Landing from '@/components/landing/Landing';
 import { Wrench, Snowflake, PenTool, CheckCircle, ShieldCheck, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import HealthcareLayout from '@/components/landing/LayoutPage';
+import Snowflakes from '@/components/ui/Snowflakes';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -32,7 +33,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="py-12 bg-[#f8fafc]">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 lg:px-20">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -147,27 +148,38 @@ export default function Home() {
       <HealthcareLayout/>
       </section>
 
+
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 bg-blue-50 text-blue-400 relative overflow-hidden">
+        <Snowflakes count={30} color="text-blue-200" />
+        
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="container mx-auto px-4 text-center"
+          variants={staggerContainer}
+          className="container mx-auto px-4 text-center relative z-10"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <motion.h2 
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl font-bold mb-6"
+          >
             Ready to Experience Comfort?
-          </h2>
-          <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            variants={fadeInUp}
+            className="text-blue-400 text-lg mb-8 max-w-2xl mx-auto"
+          >
             Book your service today and get flat 10% off on your first
             maintenance visit.
-          </p>
-          <Link href="/booking">
-            <Button size="lg" variant="secondary" className="font-semibold">
-              Book Appointment Now
-            </Button>
-          </Link>
+          </motion.p>
+          <motion.div variants={fadeInUp}>
+            <Link href="/booking">
+              <Button size="lg" variant="secondary" className="font-semibold shadow-lg hover:shadow-xl transition-all">
+                Book Appointment Now
+              </Button>
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
     </div>
