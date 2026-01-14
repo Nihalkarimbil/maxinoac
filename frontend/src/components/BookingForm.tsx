@@ -26,7 +26,23 @@ export default function BookingForm() {
       };
 
       await api.post("/bookings", formattedValues);
-      toast.success("Booking created successfully! We will contact you soon.");
+      toast.success("Booking created successfully! Redirecting to WhatsApp...");
+
+      // WhatsApp Integration
+      const adminPhoneNumber = "8111932523"; // Replace with your actual WhatsApp number
+      const message =
+        `*New Service Booking Received* 🛠️%0A%0A` +
+        `*Name:* ${values.name}%0A` +
+        `*Phone:* ${values.phone}%0A` +
+        `*City:* ${values.place}%0A` +
+        `*Service:* ${values.serviceType}%0A` +
+        `*Device:* ${values.deviceType}%0A` +
+        `*Date:* ${formattedValues.preferredDate}%0A` +
+        `*Address:* ${values.address}`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${adminPhoneNumber}&text=${message}`;
+      window.open(whatsappUrl, "_blank");
+
       form.resetFields();
       router.push("/");
     } catch (error: any) {
