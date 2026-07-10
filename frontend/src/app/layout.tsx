@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from 'react-hot-toast';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -23,12 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
         className={`${outfit.variable} antialiased bg-zinc-50 text-zinc-900 `}
       >
        <Navbar/>
-        <main className="pt-16 min-h-screen ">{children}</main>
+        <main className=" min-h-screen ">{children}</main>
        <Footer/>
        <Toaster position="bottom-right" />
       </body>
